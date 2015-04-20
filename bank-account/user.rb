@@ -4,21 +4,19 @@ class User
   def initialize(firstname, lastname)
     @firstname = firstname
     @lastname = lastname
+    @customer_ref = "#{@lastname[0..3].upcase}"+"#{@firstname[0..1].upcase}"
   end
 
-  def check_password? (password_entered)
+  def check_password?(password_entered)
     password_entered == @password
   end
 
-  def generate_cr
-    @customer_ref = "#{@lastname[0..3].upcase}"+"#{@firstname[0..1].upcase}"
-    puts "Your customer reference is #{self.customer_ref}"
-    #check that doesnt already exist
+  def display_c_ref
+    puts "Your customer reference is #{@customer_ref}"
   end
 
   def self.all
-    cust_refs = []
-    cust_refs <<
+
   end
 
 end
