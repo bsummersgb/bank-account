@@ -44,7 +44,14 @@ _______________________________________________________________________\n
 Please make a selection:\n
 1 = Create Account\n2 = Make a Deposit\n3 = Make a Withdrawal\n4 = List Transactions\n"
 
-users = []
+loop do
+
+users = [
+  User.new(Hugh, Greenwald)
+  User.new(Wendy, Smith)
+  User.new(Harry, Evings)
+  User.new(Lucy, Sherbert)
+  ]
 
 selection = gets.chomp
   case selection
@@ -53,10 +60,10 @@ selection = gets.chomp
       firstname = gets.chomp
       puts "Enter your second name"
       secondname = gets.chomp
-      users << User.new(firstname, secondname)
+      users << (user1 = User.new(firstname, secondname))
 
+      customer_ref
       set_password
-
 
     when '2' then
       puts "How much?"
@@ -70,4 +77,4 @@ selection = gets.chomp
       puts "That is not a valid selection."
   end
 
-### change
+end
