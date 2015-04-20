@@ -42,13 +42,16 @@ def set_password
 puts "\nWelcome to the BryKath Bank! How can we help you today?\n
 _______________________________________________________________________\n
 Please make a selection:\n
-1 = Create Account\n2 = Make a Deposit\n3 = Make a Withdrawal\n4 = List Transactions\n"
+1 = Create Account\n2 = Make a Deposit\n3 = Make a Withdrawal\n4 = List Transactions\n5 = Exit"
+
+
+
 
 users = []
 
 selection = gets.chomp
   case selection
-    when '1' then
+    when '1'
       puts "Enter your first name"
       firstname = gets.chomp
       puts "Enter your second name"
@@ -58,14 +61,18 @@ selection = gets.chomp
       set_password
 
 
-    when '2' then
-      puts "How much?"
+    when '2'
+      puts "Please enter your account number"
+      acc_no = gets.chomp.to_i
+       if acc_no ||=
+        else puts "This is not a valid account number... Please try again: "
 
 
-    when '3' then
+    when '3'
 
-    when '4' then
+    when '4'
       transactions
+    when '5'
     else
       puts "That is not a valid selection."
   end

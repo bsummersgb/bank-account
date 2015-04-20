@@ -18,7 +18,7 @@ class User
 
   def self.all
     cust_refs = []
-    cust_refs <<
+    #cust_refs <<
   end
 
 end
