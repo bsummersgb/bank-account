@@ -1,10 +1,11 @@
 class Transaction
-  attr_accessor :date, :amount, :type
+  attr_accessor :date, :amount, :type, :acc_no
 
   def initialize(date, amount, type)
     @date = Time.now
     @amount = amount
     @type = type
+    @acc_no = acc_no
   end
 
   def date_formatted
@@ -16,7 +17,7 @@ class Transaction
   end
 
   def to_s
-    "#{type}: #{amount_formatted} #{date_formatted}"
+    "#{acc_no} #{type}: #{amount_formatted} #{date_formatted}"
   end
 
 end
