@@ -9,19 +9,18 @@ class Bank
     @users = []
   end
 
+  def to_s
+    "Number of accounts: #{@accounts.size}\nNumber of users: #{@users.size}"
+  end
+
+=begin
   def self.find_account(acc_no)
     @accounts.find { |acc_no| == acc_no }
   end
 
-  def self.find_user(customer_ref)
-    @users.find { |ref| == customer_ref }
+  def self.find_user_by_ref(customer_ref)
+    @users.find { |ref| customer_ref }
   end
-end
 
-bank1 = Bank.new
-harry = User.new('Harry', 'Livings', customer_ref)
-bank.users << harry
-acct1 = Account.new(12345)
-acct1.user = harry
-harry.accounts << acct1
-bank.accounts << acct1
+=end
+end

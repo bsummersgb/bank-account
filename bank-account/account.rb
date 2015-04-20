@@ -1,13 +1,18 @@
 class Account
-  attr_accessor :cutomer_ref, :acc_no
+  attr_accessor :customer_ref, :acc_no, :balance
 
-  def initialize(user)
-    @user = cutomer_ref
-    @acc_no = @acc_no
+  def initialize(customer_ref)
+    @customer_ref = customer_ref
+    @acc_no = nil
+    @balance = 0
   end
 
   def to_s
-    "#{@cutomer_ref} - Account no. #{@acc_no}"
+    "#{@customer_ref} - Account no. #{@acc_no}"
+  end
+
+  def self.create_account(customer_ref)
+    $bank1.accounts << Account.new(customer_ref)
   end
 
 end
