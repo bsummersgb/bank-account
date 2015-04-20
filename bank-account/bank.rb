@@ -15,10 +15,11 @@ class Bank
 
 =begin
   def self.find_account(acc_no)
-    @accounts.find { |acc_no| == acc_no }
+    @accounts.find { |acc_no| acc_no }
   end
 
   def self.find_user_by_ref(customer_ref)
+  def self.find_user(customer_ref)
     @users.find { |ref| customer_ref }
   end
 

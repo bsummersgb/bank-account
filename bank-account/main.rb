@@ -3,11 +3,12 @@ require './account.rb'
 require './bank.rb'
 #require './transaction.rb'
 
-
+$acc_no_base = 187463
 $bank1 = Bank.new
 
-puts "\nWelcome to the BryKath Bank! How can we help you today?\n
-_______________________________________________________________________\n
+puts "\nWelcome to the BryKath Bank! How can we help you today?"
+loop do
+puts "_________________________________________________________________\n
 Please make a selection:\n
 1 = Create Account\n2 = Make a Deposit\n3 = Make a Withdrawal\n4 = List Transactions\n5 = Exit"
 
@@ -18,38 +19,31 @@ selection = gets.chomp
       firstname = gets.chomp
       puts "Enter your second name"
       lastname = gets.chomp
-      User.create_user(firstname, lastname)
-      customer_ref = "#{User.lastname[0..3].upcase}"+"#{User.firstname[0..1].upcase}"
-      Account.create_account(customer_ref)
-      User.display_c_ref
-      set_password
-    end
-
-__END__
+      new_user = User.new(firstname, lastname)
+      User.all_users(new_user) #working
+      Account.create_account(new_user) #working
+      new_user.display_cust_ref #working
+      new_account = Account.new(new_user.customer_ref)
+      new_account.display_acc_no
+      new_user.set_password
     when '2'
       puts "Please enter your account number"
-      acc_no = gets.chomp.to_i
-       if acc_no ||=
-        else puts "This is not a valid account number... Please try again: "
-        end
-    when '3'
+      acc_no = gets.to_i
+      if $bank1.accounts.exists?(acc_no)
+        puts "Enter deposit amount"
 
+        #####up to here
+
+      else puts "This is not a valid account number... Please try again: "
+      end
+    when '3'
+      puts "3"
     when '4'
-      transactions
+      puts "4"
     when '5'
+      puts "5"
     else
       puts "That is not a valid selection."
   end
 
-
-
-
-
-
-
-
-
-
-
-acct2 = Account.new('LIVIHA')
-bank1.accounts << acct2
+end
