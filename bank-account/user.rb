@@ -15,13 +15,4 @@ class User
     puts "Your customer reference is #{@customer_ref}"
   end
 
-  def self.all
-<<<<<<< HEAD
-    cust_refs = []
-    #cust_refs <<
-=======
-
->>>>>>> b09cc1c1142c7f5e3f768fed5b9a3a359076d074
-  end
-
 end
