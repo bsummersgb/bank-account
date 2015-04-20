@@ -47,7 +47,14 @@ Please make a selection:\n
 
 
 
-users = []
+loop do
+
+users = [
+  User.new(Hugh, Greenwald)
+  User.new(Wendy, Smith)
+  User.new(Harry, Evings)
+  User.new(Lucy, Sherbert)
+  ]
 
 selection = gets.chomp
   case selection
@@ -56,17 +63,16 @@ selection = gets.chomp
       firstname = gets.chomp
       puts "Enter your second name"
       secondname = gets.chomp
-      users << User.new(firstname, secondname)
+      users << (user1 = User.new(firstname, secondname))
 
+      customer_ref
       set_password
-
 
     when '2'
       puts "Please enter your account number"
       acc_no = gets.chomp.to_i
        if acc_no ||=
         else puts "This is not a valid account number... Please try again: "
-
 
     when '3'
 
@@ -77,4 +83,4 @@ selection = gets.chomp
       puts "That is not a valid selection."
   end
 
-### change
+end
